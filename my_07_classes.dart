@@ -33,20 +33,6 @@ class Orbiter extends Spacecraft{
   Orbiter(super.name, DateTime super.launchDate, this.altitude);
 }
 
-/*
-mixin Piloted{
-  int astronauts = 1;
-
-  void describeCrew(){
-    print('Number of astronauts: $astronauts');
-  }
-}
-
-class PilotedCraft extends Spacecraft with Piloted {
-  // ...
-}
-*/
-
 void main(){
   var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
   voyager.describe();

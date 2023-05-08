@@ -1,29 +1,29 @@
-enum PlanetType{ terrestrial, gas, ice }
+enum PlanetType{terrestrial, gas, ice }
 
-enum Planet{
-    /// All instance variables are final
-    final PlanetType planetType;
-    final int moons;
-    final bool hasRing;
-    
-    mercury(planetType: PlanetType.terrestrial, moons: 0, hasRing: false),
-    venus(planetType: PlanetType.terrestrial, moons: 0, hasRing: false),
-    earth(planetType: PlanetType.terrestrial, moons: 1, hasRing: false),
-    //...
-    uranus(planetType: PlanetType.ice, moons: 27, hasRing: true),
-    neptune(planetType: PlanetType.ice, moons: 14, hasRing: true),
+/// Enum that enumerates the different planets in our solar system
+/// and some of their properties.
+enum Planet {
 
-    /// A constant generating constructor
-    const Planet(
-      {required this.planetType, required this.moons, required this.hasRing}
-    )
+  mercury(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  venus(planetType: PlanetType.terrestrial, moons: 0, hasRings: false),
+  earth(planetType: PlanetType.terrestrial, moons: 1, hasRings: false),
+  // ···
+  uranus(planetType: PlanetType.ice, moons: 27, hasRings: true),
+  neptune(planetType: PlanetType.ice, moons: 14, hasRings: true);
 
+  /// A constant generating constructor
+  const Planet(
+      {required this.planetType, required this.moons, required this.hasRings});
 
+  /// All instance variables are final
+  final PlanetType planetType;
+  final int moons;
+  final bool hasRings;
 
-    /// Enhanced enums supports getters and other methods
-    bool get isGiant =>
-      planetType == PlanetType.gas || planetType == planetType.ice;
-  }
+  /// Enhanced enums support getters and other methods
+  bool get isGiant =>
+      planetType == PlanetType.gas || planetType == PlanetType.ice;
+}
 
 void main(){
 

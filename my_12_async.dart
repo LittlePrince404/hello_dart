@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'my_07_classes.dart';
+
 const oneSecond = Duration(seconds: 1);
 // ···
 Future<void> printWithDelay(String message) async {
@@ -5,11 +8,11 @@ Future<void> printWithDelay(String message) async {
   print(message);
 }
 
-Future<void> printWithDelay(String message) {
-  return Future.delayed(oneSecond).then((_) {
-    print(message);
-  });
-}
+// Future<void> printWithDelay(String message) {
+//   return Future.delayed(oneSecond).then((_) {
+//     print(message);
+//   });
+// }
 
 Future<void> createDescriptions(Iterable<String> objects) async {
   for (final object in objects) {
@@ -34,4 +37,10 @@ Stream<String> report(Spacecraft craft, Iterable<String> objects) async* {
     await Future.delayed(oneSecond);
     yield '${craft.name} flies by $object';
   }
+}
+
+void main(){
+  printWithDelay("Delay 1 second.");
+  createDescriptions(['createDescriptions_I_test', 'createDescriptions_II_test']);
+  report(Spacecraft('Voyager I', DateTime(1977, 9, 5)), ['Jupiter', 'Saturn']);
 }
