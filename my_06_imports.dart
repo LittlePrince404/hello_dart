@@ -8,5 +8,5 @@ import 'package:test/test.dart';
 import 'path/to/my_other_file.dart';
 */
 void main(){
-  
+  print("'dart:math' imported.");
 }
