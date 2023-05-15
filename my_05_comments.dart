@@ -1,3 +1,9 @@
+//Comments, https://dart.dev/language#comments
+
+/*
+* Dart comments usually start with //.
+*/
+
 // This is a normal, one-line comment.
 
 /// This is a documentation comment, used to document libraries,

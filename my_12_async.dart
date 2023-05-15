@@ -1,3 +1,10 @@
+//Async, https://dart.dev/language#async
+
+/*
+* Avoid callback hell and make your code much more readable by using async and await.
+*/
+
+
 import 'dart:io';
 import 'my_07_classes.dart';
 
@@ -7,6 +14,7 @@ Future<void> printWithDelay(String message) async {
   await Future.delayed(oneSecond);
   print(message);
 }
+//The method above is equivalent to:
 
 // Future<void> printWithDelay(String message) {
 //   return Future.delayed(oneSecond).then((_) {
@@ -14,6 +22,8 @@ Future<void> printWithDelay(String message) async {
 //   });
 // }
 
+
+//As the next example shows, async and await help make asynchronous code easy to read.
 Future<void> createDescriptions(Iterable<String> objects) async {
   for (final object in objects) {
     try {
@@ -32,6 +42,7 @@ Future<void> createDescriptions(Iterable<String> objects) async {
   }
 }
 
+//You can also use async*, which gives you a nice, readable way to build streams.
 Stream<String> report(Spacecraft craft, Iterable<String> objects) async* {
   for (final object in objects) {
     await Future.delayed(oneSecond);

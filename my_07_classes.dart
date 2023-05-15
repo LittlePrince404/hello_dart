@@ -1,3 +1,11 @@
+//Classes, https://dart.dev/language#classes
+
+/*
+* Here’s an example of a class with three properties, two constructors, 
+* and a method. One of the properties can’t be set directly, so it’s defined using a getter method (instead of a variable). 
+* The method uses string interpolation to print variables’ string equivalents inside of string literals.
+*/
+
 class Spacecraft{
   String name;
   DateTime? launchDate;
@@ -27,13 +35,8 @@ class Spacecraft{
   }
 }
 
-class Orbiter extends Spacecraft{
-  double altitude;
-
-  Orbiter(super.name, DateTime super.launchDate, this.altitude);
-}
-
 void main(){
+  //You might use the Spacecraft class like this:
   var voyager = Spacecraft('Voyager I', DateTime(1977, 9, 5));
   voyager.describe();
 

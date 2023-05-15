@@ -1,3 +1,9 @@
+//Mixins, https://dart.dev/language#mixins
+
+/*
+* Mixins are a way of reusing code in multiple class hierarchies. 
+*/
+
 import 'my_07_classes.dart';
 
 mixin Piloted{
@@ -8,10 +14,12 @@ mixin Piloted{
   }
 }
 
+//To add a mixin’s capabilities to a class, just extend the class with the mixin.
 class PilotedCraft extends Spacecraft with Piloted {
   PilotedCraft(super.name, super.launchDate);
   // ···
 }
+//PilotedCraft now has the astronauts field as well as the describeCrew() method.
 
 void main(){
 

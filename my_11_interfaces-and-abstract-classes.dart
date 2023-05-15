@@ -1,3 +1,10 @@
+//Interfaces and abstract classes, https://dart.dev/language#interfaces-and-abstract-classes
+
+/*
+* Dart has no interface keyword. Instead, all classes implicitly define an interface. 
+* Therefore, you can implement any class.
+*/
+
 import 'my_07_classes.dart';
 
 class MockSpaceship implements Spacecraft{
@@ -21,6 +28,8 @@ class MockSpaceship implements Spacecraft{
   }
 }
 
+//You can create an abstract class to be extended (or implemented) by a concrete class. 
+//Abstract classes can contain abstract methods (with empty bodies).
 abstract class Describable{
   void describe();
 
@@ -29,8 +38,9 @@ abstract class Describable{
     describe();
     print('=========');
   }
-
 }
+//Any class extending Describable has the describeWithEmphasis() method, 
+//which calls the extender’s implementation of describe().
 
 class describeMock extends Describable{
 
